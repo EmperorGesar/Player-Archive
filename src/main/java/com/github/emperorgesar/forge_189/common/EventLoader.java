@@ -1,7 +1,6 @@
 package com.github.emperorgesar.forge_189.common;
 
 import com.github.emperorgesar.forge_189.client.KeyLoader;
-import com.github.emperorgesar.forge_189.common.SaveDirectory;
 
 
 import net.minecraft.client.Minecraft;
@@ -34,8 +33,8 @@ public class EventLoader
             EntityPlayer player = Minecraft.getMinecraft().thePlayer;
             World world = Minecraft.getMinecraft().theWorld;
 
-            SaveDirectory dir = new SaveDirectory();
-            player.addChatMessage(new ChatComponentTranslation(dir.getPlayerdata().toString(), world.getTotalWorldTime()));
+            PlayerData playerData = new PlayerData();
+            player.addChatMessage(new ChatComponentTranslation(playerData.getData().toArray()[0].toString(), world.getTotalWorldTime()));
         }
     }
 }
