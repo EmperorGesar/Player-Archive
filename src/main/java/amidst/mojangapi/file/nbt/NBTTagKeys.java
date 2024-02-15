@@ -7,6 +7,7 @@ public class NBTTagKeys {
 	public static final String TAG_KEY_BASE = "Base";
 	public static final String TAG_KEY_DATA = "Data";
 	public static final String TAG_KEY_POS = "Pos";
+	public static final String TAG_KEY_ROTATION = "Rotation";
 	public static final String TAG_KEY_PLAYER = "Player";
 	public static final String TAG_KEY_SPAWN_X = "SpawnX";
 	public static final String TAG_KEY_SPAWN_Z = "SpawnZ";
