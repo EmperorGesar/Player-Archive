@@ -22,4 +22,16 @@ public class EntityLoader {
         EntityRegistry.registerModEntity(entityClass, name, nextID++, PlayerArchive.instance, trackingRange, updateFrequency,
                 sendsVelocityUpdates);
     }
+
+    @SideOnly(Side.CLIENT)
+    public static void registerRenders()
+    {
+        registerEntityRender(VirtualPlayer.class, RenderVirtualPlayer.class);
+    }
+
+    @SideOnly(Side.CLIENT)
+    private static <T extends Entity> void registerEntityRender(Class<T> entityClass, Class<? extends Render<T>> render)
+    {
+        RenderingRegistry.registerEntityRenderingHandler(entityClass, new EntityRenderFactory<T>(render));
+    }
 }

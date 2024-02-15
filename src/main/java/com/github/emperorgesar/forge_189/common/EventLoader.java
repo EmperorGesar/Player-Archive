@@ -65,7 +65,7 @@ public class EventLoader
 
                     if (data.getUUID() != player.getUniqueID()) {
                         GameProfile profile = new GameProfile(data.getUUID(), data.getName());
-                        this.players.add(new VirtualPlayer(world, profile));
+                        this.players.add(new VirtualPlayer(world, profile, data.getSkinURL()));
                         this.players.get(i).setPositionAndRotation(data.getPosX(), data.getPosY(), data.getPosZ(), data.getYaw(), data.getPitch());
                         this.players.get(i).travelToDimension(data.getDimension());
 

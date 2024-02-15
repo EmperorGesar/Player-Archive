@@ -13,20 +13,19 @@ import net.minecraft.world.World;
 
 public class VirtualPlayer extends AbstractClientPlayer {
     ResourceLocation locationSkin;
-    GameProfile gameProfile;
 
-    public VirtualPlayer(World world, GameProfile gameProfile) {
+    public VirtualPlayer(World world, GameProfile gameProfile, String url) {
         super(world, gameProfile);
-        this.gameProfile = gameProfile;
         SkinManager skinManager = Minecraft.getMinecraft().getSkinManager();
+        MinecraftProfileTexture texture = new MinecraftProfileTexture(url, null);
+        this.locationSkin = skinManager.loadSkin(texture, MinecraftProfileTexture.Type.SKIN);
     }
 
-//    @Override
-//    public ResourceLocation getLocationSkin() {
-//        return this.locationSkin;
-//    }
+    public ResourceLocation getLocationSkin() {
+        return this.locationSkin;
+    }
 
-    public NetworkPlayerInfo getInfo() {
-        return Minecraft.getMinecraft().getNetHandler().getPlayerInfo(this.gameProfile.getId());
+    public String getSkinType() {
+        return "Classic";
     }
 }
