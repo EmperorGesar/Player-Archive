@@ -1,13 +1,9 @@
 package com.github.emperorgesar.forge_189.entity;
 
-import com.github.emperorgesar.forge_189.PlayerArchive;
-import net.minecraft.client.entity.AbstractClientPlayer;
-import net.minecraft.client.model.ModelPlayer;
+import net.minecraft.client.model.ModelBiped;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
 import net.minecraft.client.renderer.entity.RendererLivingEntity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -17,7 +13,7 @@ public class RenderVirtualPlayer extends RendererLivingEntity<VirtualPlayer> {
 
     public RenderVirtualPlayer(RenderManager renderManager)
     {
-        super(renderManager, new ModelPlayer(1.0F, true), 0.5F);
+        super(renderManager, new ModelBiped(), 0.5F);
     }
 
     @Override

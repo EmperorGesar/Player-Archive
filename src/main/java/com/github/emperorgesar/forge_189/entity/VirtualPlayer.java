@@ -4,10 +4,7 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.AbstractClientPlayer;
-import net.minecraft.client.entity.EntityOtherPlayerMP;
-import net.minecraft.client.network.NetworkPlayerInfo;
 import net.minecraft.client.resources.SkinManager;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
@@ -26,6 +23,6 @@ public class VirtualPlayer extends AbstractClientPlayer {
     }
 
     public String getSkinType() {
-        return "Classic";
+        return "default";
     }
 }
