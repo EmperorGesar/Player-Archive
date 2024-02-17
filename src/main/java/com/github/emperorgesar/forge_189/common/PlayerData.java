@@ -1,21 +1,14 @@
 package com.github.emperorgesar.forge_189.common;
 
 import amidst.documentation.NotNull;
-import amidst.logging.AmidstLogger;
-import amidst.mojangapi.file.directory.SaveDirectory;
 import amidst.mojangapi.file.json.player.*;
 import amidst.mojangapi.file.nbt.NBTTagKeys;
 import amidst.mojangapi.file.nbt.NBTUtils;
-import amidst.mojangapi.file.nbt.player.PlayerNbt;
-import amidst.mojangapi.file.service.SaveDirectoryService;
 import amidst.parsing.FormatException;
 import amidst.parsing.json.JsonReader;
-import net.minecraftforge.common.DimensionManager;
-import net.querz.nbt.io.NBTUtil;
 import net.querz.nbt.tag.CompoundTag;
 import net.querz.nbt.tag.ListTag;
 import net.querz.nbt.tag.NumberTag;
-import net.querz.nbt.tag.Tag;
 
 import java.io.File;
 import java.io.IOException;
@@ -64,7 +57,6 @@ public class PlayerData {
         try {
             return getTags();
         } catch (IOException | NullPointerException | ClassCastException e) {
-            AmidstLogger.warn(e, "cannot read tags from file: {}", file);
             return null;
         }
     }
@@ -79,7 +71,6 @@ public class PlayerData {
         try {
             return Optional.of(getPlayerJsonByUUID(uuid));
         } catch (IOException | FormatException | NullPointerException e) {
-            AmidstLogger.warn("unable to load player information by uuid: {}", uuid);
             return Optional.empty();
         }
     }

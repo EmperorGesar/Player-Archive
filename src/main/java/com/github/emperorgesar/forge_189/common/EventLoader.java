@@ -50,7 +50,11 @@ public class EventLoader
                 this.visible = !this.visible;
             }
 
-            player.addChatMessage(new ChatComponentTranslation(player.getUniqueID().toString()));
+            if (this.visible) {
+                player.addChatMessage(new ChatComponentTranslation("Archive Players Showed"));
+            } else {
+                player.addChatMessage(new ChatComponentTranslation("Archive Players Hided"));
+            }
         }
     }
 
